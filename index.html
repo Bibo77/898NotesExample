@@ -23,7 +23,7 @@
   <div data-role="content">
       <p>Type in your secrets. They will be saved for you, forever."</p>
           <textarea id="notes" onkeyup="update()" placeholder="Trust me, I won't divulge your secrets..."></textarea>
-
+            <input id="clear" type="button" value="Clear Data"  /> 
   
 </div> 
 
@@ -40,6 +40,10 @@
     
     $(document).ready(function(){
         $("#notes").val(permanentStorage.note); 
+         
+        
+
+        
     }); 
     
     function update(){
@@ -47,5 +51,10 @@
         
     }
     
+    $("#clear").click(function(){
+            permanentStorage.clear();
+            alert('Data Cleared'); 
+            location.reload();
+    });
     
 </script>
