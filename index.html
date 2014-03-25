@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="jquery.mobile-1.4.0.min.css">
+    <script src="jquery-2.1.0.min.js"></script>
+    <script src="jquery.mobile-1.4.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="Description" content="" />
+    <meta name="Keywords"  content="" />
+</head>
+<body>
+   
+
+    
+
+<div data-role="page" id="emailPage" data-theme="b">
+  <div data-role="header" data-position="fixed" >
+      <h1>Secret Notes</h1>
+  </div>
+    
+  <div data-role="content">
+      <p>Type in your secrets. They will be saved for you, forever."</p>
+          <textarea id="notes" onkeyup="update()" placeholder="Trust me, I won't divulge your secrets..."></textarea>
+
+  
+</div> 
+
+    
+
+
+</div> 
+
+</body>
+</html>
+
+<script type="text/javascript" charset="utf-8">
+    var permanentStorage = window.localStorage;
+    
+    $(document).ready(function(){
+        $("#notes").val(permanentStorage.note); 
+    }); 
+    
+    function update(){
+        permanentStorage.note = $("#notes").val(); 
+        
+    }
+    
+    
+</script>
